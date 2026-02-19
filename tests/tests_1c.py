@@ -12,6 +12,12 @@ def test_case0():
 
 def test_case1():
   assert max_subarray_sum([1]) == 1
+  assert max_subarray_sum([-1]) == -1
+  assert max_subarray_sum([-1, 0]) == 0
+  assert max_subarray_sum([0, -1]) == 0
 
 def test_case2():
   assert max_subarray_sum([5,4,-1,7,8]) == 23
+  assert max_subarray_sum([-1, -1, -1, -1]) == -1
+  assert max_subarray_sum([-1, 0, 0, -1]) == 0
+  assert max_subarray_sum([-999, 2, -1, 5]) == 6
