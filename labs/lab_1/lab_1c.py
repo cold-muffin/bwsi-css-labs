@@ -20,11 +20,16 @@ def max_subarray_sum(nums: list[int]) -> int:
         int: The maximum sum of any contiguous subarray.
     """
 
-    max_current = max_global = nums[0]
+    # Current max in first iteration will always be the first num
+    max_current = 0
+    max_global = nums[-1]
     
     for num in nums:
+        # Assume we already have max of previous group of nums
+        # The previous numbers can be thought of as one number
+        # The solution to [-1, 2, 1] and [2, 1] are the same
         max_current = max(num, max_current + num)
-        if max_current < max_global:
+        if max_current > max_global:
             max_global = max_current
             
     return max_global
