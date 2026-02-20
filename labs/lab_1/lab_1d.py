@@ -23,9 +23,10 @@ def two_sum(nums: list[int], target: int) -> list[int]:
 
     num_to_index = {}
     for index, num in enumerate(nums):
-        complement = target + num
+        complement = target - num
         if complement in num_to_index:
             return [num_to_index[complement], index]
+        # Leave dictionary at end to avoid duplicates
         num_to_index[num] = index
     return []  # In case there is no solution, though the problem guarantees one exists.
 
